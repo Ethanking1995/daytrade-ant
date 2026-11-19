@@ -240,7 +240,7 @@ class LiveMarketTracker:
                 hi = (q_m.get("high") or [None])[i]
                 lo = (q_m.get("low") or [None])[i]
                 vol = int((q_m.get("volume") or [0])[i] or 0)
-                if op is None or cl is None:
+                if op is None or cl is None or vol <= 0:
                     continue
                 typ = (float(hi) + float(lo) + float(cl)) / 3.0
                 cum_pv += typ * vol
