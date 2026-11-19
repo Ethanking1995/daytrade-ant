@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANT IPO Live Leg-In Copilot (v2.0 Mega-Cap Calibrated)</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Live Quote, QQQ VWAP Filter & Market Status Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="ticker-badge">ANT v2</div>
+        <div class="brand-title">
+          <h1>Anthropic IPO — Mega-Cap Calibrated Leg-In Copilot</h1>
+          <div class="brand-sub">
+            <span class="pulse-dot" id="feedPulse"></span>
+            <span id="feedStatusText">Connecting to live feeds...</span>
+            <span>•</span>
+            <span>Offer: <strong>$83.00</strong> ($81.3B / 980M sh • $12.2B Reg-M Wall)</span>
+            <span>•</span>
+            <span id="clockDisplay">--:--:-- EST</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="live-strip">
+        <div class="quote-pill">
+          <div class="lbl">Nasdaq Spot &amp; 15m OR</div>
+          <div class="val" id="nasdaqPrice">Pre-Cross</div>
+          <div class="sub" id="nasdaqSub">Expect ~11:00a–12:00p ET</div>
+        </div>
+        <div class="quote-pill">
+          <div class="lbl">24/7 Perp (xyz:ANT)</div>
+          <div class="val" id="perpPrice">--</div>
+          <div class="sub" id="perpSub">Bid/Ask: --</div>
+        </div>
+        <div class="quote-pill">
+          <div class="lbl">Valuation &amp; Range Pop</div>
+          <div class="val" id="valDisplay">--</div>
+          <div class="sub" id="popFromOffer">vs $83 / vs $78: --</div>
+        </div>
+        <div class="quote-pill">
+          <div class="lbl">Macro &amp; QQQ VWAP Filter</div>
+          <div class="val" id="vixDisplay">VIX --</div>
+          <div class="sub" id="macroSub">QQQ VWAP: --</div>
+        </div>
+        <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">☀️ Light</button>
+      </div>
+    </header>
+
+    <!-- Live Mode vs v2 Rehearsal Simulator Bar -->
+    <section class="scenario-bar">
+      <span class="scenario-label">Feed &amp; Rehearsal:</span>
+      <button class="chip-btn active" id="mode-live" onclick="selectScenario('live')">🟢 Live Auto-Track</button>
+      <button class="chip-btn" id="mode-lockout_15m" onclick="selectScenario('lockout_15m')">🛑 15m Hands-Off Window</button>
+      <button class="chip-btn" id="mode-lane1_cold" onclick="selectScenario('lane1_cold')">💎 Lane 1 Cold ($88 ORH Break)</button>
+      <button class="chip-btn" id="mode-lane2_orh" onclick="selectScenario('lane2_orh')">🚀 Lane 2 Sweet ($98 ORH Break)</button>
+      <button class="chip-btn" id="mode-orl_break" onclick="selectScenario('orl_break')">🔻 Confirmed 15m &lt; ORL Break</button>
+      <button class="chip-btn" id="mode-lane3_hot" onclick="selectScenario('lane3_hot')">🔥 Lane 3 Euphoric ($116 &gt;+35%)</button>
+      <button class="chip-btn" id="mode-day3_opts" onclick="selectScenario('day3_opts')">⚡ Day 3 (Mon) Options Gamma</button>
+
+      <!-- Custom Simulator Sliders -->
+      <div class="sim-controls" id="simControls">
+        <div class="ctrl-group">
+          <label><span>IPO Day</span><strong id="simDayLbl">Day 1</strong></label>
+          <select id="simDay" onchange="onCustomSimChange()">
+            <option value="1">Day 1 (Thu Nov 19 Debut)</option>
+            <option value="2">Day 2 (Fri Nov 20 • T+1 Borrow Open)</option>
+            <option value="3">Day 3 (Mon Nov 23 • Options List!)</option>
+            <option value="4">Day 4 (Tue Nov 24 • Post-Gamma Unwind)</option>
+            <option value="5">Day 5 (Wed Nov 25 • Noon Holiday Cutoff)</option>
+          </select>
+        </div>
+        <div class="ctrl-group">
+          <label><span>NOOP Cross</span><strong id="simNoopLbl">$98.00</strong></label>
+          <input type="range" id="simNoop" min="80" max="140" step="0.5" value="98" oninput="onCustomSimChange()" />
+        </div>
+        <div class="ctrl-group">
+          <label><span>Current Price</span><strong id="simPriceLbl">$100.20</strong></label>
+          <input type="range" id="simPrice" min="78" max="155" step="0.25" value="100.20" oninput="onCustomSimChange()" />
+        </div>
+        <div class="ctrl-group">
+          <label><span>Mins Since Cross</span><strong id="simMinsLbl">22m</strong></label>
+          <input type="range" id="simMins" min="2" max="240" step="1" value="22" oninput="onCustomSimChange()" />
+        </div>
+        <div class="ctrl-group">
+          <label><span>QQQ Tape State</span><strong>Filter</strong></label>
+          <select id="simQqqState" onchange="onCustomSimChange()">
+            <option value="BULLISH_ABOVE_VWAP">🟢 QQQ Above VWAP</option>
+            <option value="CAUTION_BELOW_VWAP">🟡 QQQ Below VWAP</option>
+            <option value="BREAKING_LOWS">🔴 QQQ Breaking Intraday Lows</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO SECTION: What Should We Leg Into Right Now? -->
+    <div class="hero-grid">
+      <div class="card">
+        <div id="copilotBanner" class="copilot-banner tone-blue">
+          <div class="decision-kicker">
+            <span id="decisionStateTag">ANALYZING LIVE TAPE...</span>
+            <span class="ev-pill" id="decisionEvPill">Mega-Cap Calibrated v2.0</span>
+          </div>
+          <div class="decision-headline" id="decisionHeadline">Loading live ANT market state...</div>
+          <p class="decision-why" id="decisionWhy"></p>
+        </div>
+
+        <!-- Execution Guardrails: 1R Risk + VIX Haircut + Short Borrow Reality Gate -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+          <div class="risk-selector">
+            <span>Base 1R Risk:</span>
+            <button class="risk-btn" onclick="setRisk(500)">$500</button>
+            <button class="risk-btn active" onclick="setRisk(1000)">$1,000</button>
+            <button class="risk-btn" onclick="setRisk(2500)">$2,500</button>
+            <input type="number" id="customRiskInput" value="1000" step="100" style="width:82px" class="input-box" oninput="setCustomRisk(this.value)" />
+            <label style="display:inline-flex;align-items:center;gap:5px;font-size:12px;margin-left:6px;cursor:pointer;">
+              <input type="checkbox" id="vixHaircutToggle" checked onchange="renderAll()" />
+              <span id="vixHaircutLbl" class="text-amber">VIX &gt;24 Auto -28% ($720)</span>
+            </label>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:12px;color:var(--text-muted);font-weight:600;">Short Execution Access:</span>
+            <select id="shortRailSelect" class="input-box" style="width:auto;font-size:12px;" onchange="renderAll()">
+              <option value="none">🛡️ No Borrow (Long / Hard-Exit Only — Safe)</option>
+              <option value="etf">📉 -2x Short ETF (ANS / ANDD • 0.5x Size)</option>
+              <option value="htb">🏦 Confirmed Spot HTB Locate</option>
+              <option value="perp">⚡ Hyperliquid Perp (Basis/Funding Risk)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tranche-grid" id="trancheCards"></div>
+
+        <!-- Visual Price Ladder -->
+        <div class="ladder-wrap">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;">
+            <span>Live Price vs. Mega-Cap Calibrated Levels ($83 Wall • ORL/ORH • +6% T1 • $111.50 Cutoff)</span>
+            <span id="flattenCountdown" class="text-amber">Mandatory Flat Bell: 3:55 PM ET</span>
+          </div>
+          <div class="ladder-bar">
+            <div class="ladder-marker" id="ladderMarker" style="left:50%">
+              <div class="ladder-pin-label" id="ladderPinLabel">$99.00</div>
+            </div>
+          </div>
+          <div class="ladder-ticks" id="ladderTicks"></div>
+        </div>
+      </div>
+
+      <!-- Right Column: Position Tracker + Short ETF/Basis Monitor + Live Order Book -->
+      <div class="card pos-card">
+        <div>
+          <div class="section-header">
+            <h2>My Active Intraday Position Tracker</h2>
+            <span id="posDirectionBadge" class="strat-badge badge-muted">FLAT (0 SH)</span>
+          </div>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">
+            Log your fills below. Remember: Fri (Day 2 T+1) &amp; Mon (Day 3 Options) offer cleaner reference levels than forcing Day-1 chaos!
+          </p>
+
+          <div class="pos-summary">
+            <div id="posGuidanceText" style="font-size:13px;font-weight:600;">
+              Currently flat. Wait 15 mins post-cross before logging any Day-1 entry.
+            </div>
+            <div class="pos-stats">
+              <div class="pos-stat">
+                <div class="k">Filled Shares</div>
+                <div class="v" id="posShares">0</div>
+              </div>
+              <div class="pos-stat">
+                <div class="k">Avg Entry</div>
+                <div class="v" id="posAvgEntry">--</div>
+              </div>
+              <div class="pos-stat">
+                <div class="k">Live Open P&amp;L</div>
+                <div class="v" id="posUnrealized">$0.00</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pos-actions" style="margin-top:10px;">
+            <button class="action-btn primary" onclick="logLeg(1)">+ Log Leg 1 Fill (50%)</button>
+            <button class="action-btn primary" onclick="logLeg(2)">+ Log Leg 2 Add (50%)</button>
+            <button class="action-btn" onclick="logScaleT1()">✓ Paid Self 50% @ +6% T1</button>
+            <button class="action-btn danger" onclick="resetPosition()">✕ Flatten All (0 Shares)</button>
+          </div>
+
+          <!-- Broker Indicative Cross Override + Single-Stock ETF / Perp Basis Readout -->
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+              <div>
+                <div style="font-size:12px;font-weight:700;">Broker Indicative Cross Override</div>
+                <div style="font-size:11px;color:var(--text-muted);">Type Nasdaq L2 indicative NOOP (~10:30a–12p ET):</div>
+              </div>
+              <div style="display:flex;gap:6px;align-items:center;">
+                <input type="number" id="manualNoopInput" placeholder="Auto" step="0.25" style="width:86px" class="input-box" oninput="renderAll()" />
+                <button class="risk-btn" onclick="document.getElementById('manualNoopInput').value='';renderAll();">Auto</button>
+              </div>
+            </div>
+            <div id="etfBasisStrip" style="font-size:11px;color:var(--text-muted);background:var(--bg-subtle);padding:6px 10px;border-radius:8px;border:1px solid var(--border);">
+              Short ETFs (`ANS` / `ANDD` -2x) &amp; Spot-Perp Basis: Checking live feeds...
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Hyperliquid xyz:ANT L2 Order Book -->
+        <div style="border-top:1px solid var(--border);padding-top:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-size:13px;font-weight:700;">Live Order Book Depth (`xyz:ANT` Perp)</span>
+            <span id="spreadBadge" style="font-size:11px;color:var(--text-muted);">Spread: -- bps</span>
+          </div>
+          <div class="book-grid">
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;font-weight:700;">BIDS (Support)</div>
+              <div id="bookBids"></div>
+            </div>
+            <div>
+              <div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;font-weight:700;">ASKS (Supply)</div>
+              <div id="bookAsks"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIDDLE GRID: Live Candlestick Chart + 3-Lane & Week-1 Radar -->
+    <div class="mid-grid">
+      <div class="card">
+        <div class="section-header">
+          <div>
+            <h2 id="chartTitle">Live ANT Price Chart &amp; v2.0 Mega-Cap Overlays</h2>
+            <p style="font-size:12px;color:var(--text-muted);">Overlays: $83 Reg-M Wall • 15m ORL/ORH • +6% T1 • $111.50 (+35%) Overheated Ceiling.</p>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <button class="risk-btn active" id="tf-5m" onclick="setChartTF('5m')">5m</button>
+            <button class="risk-btn" id="tf-15m" onclick="setChartTF('15m')">15m</button>
+            <button class="risk-btn" id="tf-1h" onclick="setChartTF('1h')">1h</button>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="priceChart"></canvas>
+        </div>
+      </div>
+
+      <!-- v2.0 Strategy Playbook Radar -->
+      <div class="card">
+        <div class="section-header">
+          <h2>v2.0 Playbook Radar (Day 1 Lanes &amp; Week 1)</h2>
+          <span style="font-size:11px;color:var(--text-muted);">Calibrated for $81.3B Float</span>
+        </div>
+        <div class="strategy-list" id="strategyRadarList"></div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CARD: Historical Cohort Explorer with Mega-Deals Filter -->
+    <div class="card">
+      <div class="section-header">
+        <div>
+          <h2>Empirical Cohort — Mega-Deals vs. Small-Float Hyped IPOs (2023–2026)</h2>
+          <p style="font-size:12px;color:var(--text-muted);">Note scale difference: Mega-deals (SPCX $86B, SKHY $26.5B) saw +4.1% to +17.7% Day-1 O→H vs. +40%+ on $1B tight floats.</p>
+        </div>
+        <div class="tabs" style="margin-bottom:0;">
+          <button class="chip-btn active" id="flt-mega" onclick="setCohortFilter('mega')">Mega/Large Deals (≥$4.5B)</button>
+          <button class="chip-btn" id="flt-all" onclick="setCohortFilter('all')">All 20 Hyped IPOs</button>
+          <button class="chip-btn" id="flt-sweet" onclick="setCohortFilter('sweet')">0%..+35% Cross</button>
+          <button class="chip-btn" id="flt-hot" onclick="setCohortFilter('hot')">&gt;+35% Overheated</button>
+        </div>
+      </div>
+
+      <div style="overflow-x:auto;margin-top:10px;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Company / Sector</th>
+              <th>IPO Date</th>
+              <th>Hype Score</th>
+              <th>Deal ($B)</th>
+              <th>Offer</th>
+              <th>D1 Open (NOOP)</th>
+              <th>Cross Pop</th>
+              <th>D1 O→H</th>
+              <th>D1 O→L</th>
+              <th>D1 O→C</th>
+              <th>D2 O→C</th>
+              <th>D3 O→C</th>
+            </tr>
+          </thead>
+          <tbody id="cohortTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

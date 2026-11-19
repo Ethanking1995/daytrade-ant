@@ -1,0 +1,735 @@
+{
+  "engine_version": "2.0-megacap-calibrated",
+  "ant_profile": {
+    "meta": {
+      "ticker": "ANT",
+      "name": "Anthropic PBC",
+      "ipo_date": "2026-11-19",
+      "ipo_price": 83.0,
+      "deal_size_b": 81.3,
+      "init_val_b": 1500.0,
+      "priced_vs_range": "above",
+      "sector": "Frontier AI Foundation Models",
+      "retail_hype": 10,
+      "ai_frontier": 10
+    },
+    "hype_score": 100.0,
+    "hype_breakdown": {
+      "pricing_power": 25.0,
+      "retail_frenzy": 25.0,
+      "frontier_narrative": 25.0,
+      "scale_gravity": 25.0
+    }
+  },
+  "mega_large_deals_day1": {
+    "D1_Lane1_ColdCross_Greenshoe_ORH_Long": {
+      "n": 2,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 7.75,
+      "avg_loss_pct": 0.0,
+      "net_ev_pct": 7.75,
+      "median_pct": 7.75,
+      "profit_factor": 99.9,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX",
+          7.75
+        ],
+        [
+          "ARM",
+          7.75
+        ]
+      ]
+    },
+    "D1_Lane2_SweetSpot_15mORH_Long_6PctT1": {
+      "n": 3,
+      "win_rate_pct": 66.7,
+      "avg_win_pct": 7.75,
+      "avg_loss_pct": 2.42,
+      "net_ev_pct": 4.36,
+      "median_pct": 7.75,
+      "profit_factor": 6.4,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX",
+          7.75
+        ],
+        [
+          "ARM",
+          7.75
+        ],
+        [
+          "SKHY",
+          -2.42
+        ]
+      ]
+    },
+    "D1_Trade2_Confirmed_ORL_Breakdown_Short": {
+      "n": 1,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 5.84,
+      "avg_loss_pct": 0.0,
+      "net_ev_pct": 5.84,
+      "median_pct": 5.84,
+      "profit_factor": 99.9,
+      "friction_pct": 0.45,
+      "trade_log": [
+        [
+          "CBRS",
+          5.84
+        ]
+      ]
+    },
+    "D1_Trade3_Euphoric_Or_PM_Exhaustion_Short": {
+      "n": 2,
+      "win_rate_pct": 50.0,
+      "avg_win_pct": 4.92,
+      "avg_loss_pct": 4.95,
+      "net_ev_pct": -0.01,
+      "median_pct": -0.01,
+      "profit_factor": 0.99,
+      "friction_pct": 0.45,
+      "trade_log": [
+        [
+          "CBRS",
+          -4.95
+        ],
+        [
+          "SPCX",
+          4.92
+        ]
+      ]
+    }
+  },
+  "tier1_peers_day1": {
+    "D1_Lane1_ColdCross_Greenshoe_ORH_Long": {
+      "n": 4,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 6.82,
+      "avg_loss_pct": 0.0,
+      "net_ev_pct": 6.82,
+      "median_pct": 7.75,
+      "profit_factor": 99.9,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX",
+          7.75
+        ],
+        [
+          "ARM",
+          7.75
+        ],
+        [
+          "BSP",
+          7.75
+        ],
+        [
+          "CRWV",
+          4.03
+        ]
+      ]
+    },
+    "D1_Lane2_SweetSpot_15mORH_Long_6PctT1": {
+      "n": 8,
+      "win_rate_pct": 50.0,
+      "avg_win_pct": 6.5,
+      "avg_loss_pct": 3.42,
+      "net_ev_pct": 1.54,
+      "median_pct": 0.16,
+      "profit_factor": 1.9,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX",
+          7.75
+        ],
+        [
+          "ARM",
+          7.75
+        ],
+        [
+          "KLAR",
+          2.75
+        ],
+        [
+          "RBRK",
+          -3.75
+        ],
+        [
+          "NTSK",
+          -3.75
+        ],
+        [
+          "QNT",
+          -3.75
+        ],
+        [
+          "BSP",
+          7.75
+        ],
+        [
+          "SKHY",
+          -2.42
+        ]
+      ]
+    },
+    "D1_Trade2_Confirmed_ORL_Breakdown_Short": {
+      "n": 3,
+      "win_rate_pct": 66.7,
+      "avg_win_pct": 6.73,
+      "avg_loss_pct": 0.28,
+      "net_ev_pct": 4.39,
+      "median_pct": 5.84,
+      "profit_factor": 48.77,
+      "friction_pct": 0.45,
+      "trade_log": [
+        [
+          "CBRS",
+          5.84
+        ],
+        [
+          "NTSK",
+          -0.28
+        ],
+        [
+          "QNT",
+          7.62
+        ]
+      ]
+    },
+    "D1_Trade3_Euphoric_Or_PM_Exhaustion_Short": {
+      "n": 4,
+      "win_rate_pct": 50.0,
+      "avg_win_pct": 4.93,
+      "avg_loss_pct": 4.95,
+      "net_ev_pct": -0.01,
+      "median_pct": -0.01,
+      "profit_factor": 1.0,
+      "friction_pct": 0.45,
+      "trade_log": [
+        [
+          "CBRS",
+          -4.95
+        ],
+        [
+          "SPCX",
+          4.92
+        ],
+        [
+          "CRCL",
+          4.93
+        ],
+        [
+          "BSP",
+          -4.95
+        ]
+      ]
+    }
+  },
+  "full_hyped_cohort_day1": {
+    "D1_Lane1_ColdCross_Greenshoe_ORH_Long": {
+      "n": 6,
+      "win_rate_pct": 83.3,
+      "avg_win_pct": 6.07,
+      "avg_loss_pct": 3.75,
+      "net_ev_pct": 4.43,
+      "median_pct": 5.89,
+      "profit_factor": 8.09,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX",
+          7.75
+        ],
+        [
+          "ARM",
+          7.75
+        ],
+        [
+          "BSP",
+          7.75
+        ],
+        [
+          "TEM",
+          3.06
+        ],
+        [
+          "SAIL",
+          -3.75
+        ],
+        [
+          "CRWV",
+          4.03
+        ]
+      ]
+    },
+    "D1_Lane2_SweetSpot_15mORH_Long_6PctT1": {
+      "n": 9,
+      "win_rate_pct": 55.6,
+      "avg_win_pct": 5.75,
+      "avg_loss_pct": 3.42,
+      "net_ev_pct": 1.68,
+      "median_pct": 2.75,
+      "profit_factor": 2.1,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX",
+          7.75
+        ],
+        [
+          "ARM",
+          7.75
+        ],
+        [
+          "KLAR",
+          2.75
+        ],
+        [
+          "RBRK",
+          -3.75
+        ],
+        [
+          "NTSK",
+          -3.75
+        ],
+        [
+          "QNT",
+          -3.75
+        ],
+        [
+          "BSP",
+          7.75
+        ],
+        [
+          "SKHY",
+          -2.42
+        ],
+        [
+          "TEM",
+          2.75
+        ]
+      ]
+    },
+    "D1_Trade2_Confirmed_ORL_Breakdown_Short": {
+      "n": 6,
+      "win_rate_pct": 66.7,
+      "avg_win_pct": 6.61,
+      "avg_loss_pct": 2.86,
+      "net_ev_pct": 3.45,
+      "median_pct": 6.03,
+      "profit_factor": 4.61,
+      "friction_pct": 0.45,
+      "trade_log": [
+        [
+          "CBRS",
+          5.84
+        ],
+        [
+          "NTSK",
+          -0.28
+        ],
+        [
+          "QNT",
+          7.62
+        ],
+        [
+          "CHYM",
+          6.21
+        ],
+        [
+          "BLSH",
+          -5.45
+        ],
+        [
+          "FIGR",
+          6.76
+        ]
+      ]
+    },
+    "D1_Trade3_Euphoric_Or_PM_Exhaustion_Short": {
+      "n": 8,
+      "win_rate_pct": 50.0,
+      "avg_win_pct": 5.33,
+      "avg_loss_pct": 3.93,
+      "net_ev_pct": 0.7,
+      "median_pct": 2.03,
+      "profit_factor": 1.36,
+      "friction_pct": 0.45,
+      "trade_log": [
+        [
+          "CBRS",
+          -4.95
+        ],
+        [
+          "SPCX",
+          4.92
+        ],
+        [
+          "CRCL",
+          4.93
+        ],
+        [
+          "BSP",
+          -4.95
+        ],
+        [
+          "TTAN",
+          -0.86
+        ],
+        [
+          "CHYM",
+          5.46
+        ],
+        [
+          "BLSH",
+          -4.95
+        ],
+        [
+          "FIGR",
+          6.01
+        ]
+      ]
+    }
+  },
+  "tier1_peers_week1": {
+    "W1_Day2_T1Levels_And_Day3_OptionsGamma_Long": {
+      "n": 5,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 9.23,
+      "avg_loss_pct": 0.0,
+      "net_ev_pct": 9.23,
+      "median_pct": 7.26,
+      "profit_factor": 99.9,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX_D2",
+          7.26
+        ],
+        [
+          "RDDT_D3_Opts",
+          12.09
+        ],
+        [
+          "NTSK_D2",
+          0.48
+        ],
+        [
+          "CRCL_D2",
+          4.65
+        ],
+        [
+          "CRWV_D3_Opts",
+          21.7
+        ]
+      ]
+    },
+    "W2_Day2_T1Borrow_OverheadSupply_Short": {
+      "n": 5,
+      "win_rate_pct": 80.0,
+      "avg_win_pct": 5.03,
+      "avg_loss_pct": 4.35,
+      "net_ev_pct": 3.16,
+      "median_pct": 5.61,
+      "profit_factor": 4.63,
+      "friction_pct": 0.35,
+      "trade_log": [
+        [
+          "CBRS_D2",
+          5.79
+        ],
+        [
+          "KLAR_D2",
+          5.68
+        ],
+        [
+          "RBRK_D2",
+          3.04
+        ],
+        [
+          "NTSK_D2",
+          -4.35
+        ],
+        [
+          "QNT_D2",
+          5.61
+        ]
+      ]
+    },
+    "W3_Day4_PostOptions_BlowOff_Unwind_Short": {
+      "n": 8,
+      "win_rate_pct": 75.0,
+      "avg_win_pct": 7.61,
+      "avg_loss_pct": 4.3,
+      "net_ev_pct": 4.63,
+      "median_pct": 6.98,
+      "profit_factor": 5.31,
+      "friction_pct": 0.3,
+      "trade_log": [
+        [
+          "CBRS_D4",
+          -4.3
+        ],
+        [
+          "SPCX_D4",
+          6.99
+        ],
+        [
+          "FIG_D4",
+          9.34
+        ],
+        [
+          "KLAR_D4",
+          -4.3
+        ],
+        [
+          "RBRK_D4",
+          6.96
+        ],
+        [
+          "NTSK_D4",
+          7.82
+        ],
+        [
+          "CRCL_D4",
+          6.65
+        ],
+        [
+          "QNT_D4",
+          7.89
+        ]
+      ]
+    }
+  },
+  "full_hyped_cohort_week1": {
+    "W1_Day2_T1Levels_And_Day3_OptionsGamma_Long": {
+      "n": 7,
+      "win_rate_pct": 100.0,
+      "avg_win_pct": 7.66,
+      "avg_loss_pct": 0.0,
+      "net_ev_pct": 7.66,
+      "median_pct": 5.53,
+      "profit_factor": 99.9,
+      "friction_pct": 0.25,
+      "trade_log": [
+        [
+          "SPCX_D2",
+          7.26
+        ],
+        [
+          "RDDT_D3_Opts",
+          12.09
+        ],
+        [
+          "NTSK_D2",
+          0.48
+        ],
+        [
+          "CRCL_D2",
+          4.65
+        ],
+        [
+          "SAIL_D2",
+          5.53
+        ],
+        [
+          "TTAN_D3_Opts",
+          1.9
+        ],
+        [
+          "CRWV_D3_Opts",
+          21.7
+        ]
+      ]
+    },
+    "W2_Day2_T1Borrow_OverheadSupply_Short": {
+      "n": 8,
+      "win_rate_pct": 62.5,
+      "avg_win_pct": 5.06,
+      "avg_loss_pct": 4.35,
+      "net_ev_pct": 1.53,
+      "median_pct": 4.1,
+      "profit_factor": 1.94,
+      "friction_pct": 0.35,
+      "trade_log": [
+        [
+          "CBRS_D2",
+          5.79
+        ],
+        [
+          "KLAR_D2",
+          5.68
+        ],
+        [
+          "RBRK_D2",
+          3.04
+        ],
+        [
+          "NTSK_D2",
+          -4.35
+        ],
+        [
+          "QNT_D2",
+          5.61
+        ],
+        [
+          "CHYM_D2",
+          5.16
+        ],
+        [
+          "BLSH_D2",
+          -4.35
+        ],
+        [
+          "FIGR_D2",
+          -4.35
+        ]
+      ]
+    },
+    "W3_Day4_PostOptions_BlowOff_Unwind_Short": {
+      "n": 13,
+      "win_rate_pct": 76.9,
+      "avg_win_pct": 6.86,
+      "avg_loss_pct": 4.3,
+      "net_ev_pct": 4.28,
+      "median_pct": 6.65,
+      "profit_factor": 5.32,
+      "friction_pct": 0.3,
+      "trade_log": [
+        [
+          "CBRS_D4",
+          -4.3
+        ],
+        [
+          "SPCX_D4",
+          6.99
+        ],
+        [
+          "FIG_D4",
+          9.34
+        ],
+        [
+          "KLAR_D4",
+          -4.3
+        ],
+        [
+          "RBRK_D4",
+          6.96
+        ],
+        [
+          "NTSK_D4",
+          7.82
+        ],
+        [
+          "CRCL_D4",
+          6.65
+        ],
+        [
+          "QNT_D4",
+          7.89
+        ],
+        [
+          "TEM_D4",
+          8.55
+        ],
+        [
+          "SAIL_D4",
+          3.21
+        ],
+        [
+          "CHYM_D4",
+          4.99
+        ],
+        [
+          "BLSH_D4",
+          6.19
+        ],
+        [
+          "FIGR_D4",
+          -4.3
+        ]
+      ]
+    }
+  },
+  "sample_ant_lanes": {
+    "lane1_cold_88": {
+      "noop": 88.0,
+      "cross_pop_pct": 6.0,
+      "pop_vs_78_top_range_pct": 12.8,
+      "implied_valuation_trillions": 1.59,
+      "vix_haircut_multiplier": 0.72,
+      "effective_risk_usd": 720.0,
+      "lane": "Lane 1: Cold / Muted Cross ($83\u2013$92 \u2022 Best R/R Greenshoe Support)",
+      "long_plan": {
+        "enabled": true,
+        "cooling_rule": "Mandatory 10\u201315 min Hands-Off after cross; require 15m ORH break or VWAP reclaim",
+        "hard_stop": "$84.92 (below 15m ORL / -3.5%)",
+        "t1_50pct": "$93.28 (+6.0% mega-cap scale)",
+        "t2_runner": "Trail VWAP / $96.80 (+10%) / 1:30 PM ET",
+        "vix_adjusted_shares": 233
+      },
+      "short_plan": {
+        "enabled": false,
+        "fallback_if_no_borrow": "Hard Exit / Stand-Down Only \u2014 Do NOT force unlocated or high-basis shorts",
+        "confirmed_trigger": "15m candle close + failed VWAP retest below 15m ORL (~$85.80)",
+        "hard_stop": "$88.88",
+        "target_zone": "$88.00 \u2013 $90.00 (cover well above $83\u2013$85 greenshoe wall!)",
+        "vix_adjusted_shares": 0
+      }
+    },
+    "lane2_sweet_98": {
+      "noop": 98.0,
+      "cross_pop_pct": 18.1,
+      "pop_vs_78_top_range_pct": 25.6,
+      "implied_valuation_trillions": 1.77,
+      "vix_haircut_multiplier": 0.72,
+      "effective_risk_usd": 720.0,
+      "lane": "Lane 2: Sweet-Spot Cross ($92\u2013$111.50 \u2022 15m ORH/ORL Two-Way Tape)",
+      "long_plan": {
+        "enabled": true,
+        "cooling_rule": "Mandatory 10\u201315 min Hands-Off after cross; require 15m ORH break or VWAP reclaim",
+        "hard_stop": "$94.57 (below 15m ORL / -3.5%)",
+        "t1_50pct": "$103.88 (+6.0% mega-cap scale)",
+        "t2_runner": "Trail VWAP / $107.80 (+10%) / 1:30 PM ET",
+        "vix_adjusted_shares": 209
+      },
+      "short_plan": {
+        "enabled": true,
+        "fallback_if_no_borrow": "Hard Exit / Stand-Down Only \u2014 Do NOT force unlocated or high-basis shorts",
+        "confirmed_trigger": "15m candle close + failed VWAP retest below 15m ORL (~$95.55)",
+        "hard_stop": "$98.98",
+        "target_zone": "$88.00 \u2013 $90.00 (cover well above $83\u2013$85 greenshoe wall!)",
+        "vix_adjusted_shares": 209
+      }
+    },
+    "lane3_euphoric_116": {
+      "noop": 116.0,
+      "cross_pop_pct": 39.8,
+      "pop_vs_78_top_range_pct": 48.7,
+      "implied_valuation_trillions": 2.1,
+      "vix_haircut_multiplier": 0.72,
+      "effective_risk_usd": 720.0,
+      "lane": "Lane 3: Euphoric Cross (>$111.50 / >+35% \u2022 Zero Morning Longs)",
+      "long_plan": {
+        "enabled": false,
+        "cooling_rule": "Mandatory 10\u201315 min Hands-Off after cross; require 15m ORH break or VWAP reclaim",
+        "hard_stop": "$111.94 (below 15m ORL / -3.5%)",
+        "t1_50pct": "$122.96 (+6.0% mega-cap scale)",
+        "t2_runner": "Trail VWAP / $127.60 (+10%) / 1:30 PM ET",
+        "vix_adjusted_shares": 177
+      },
+      "short_plan": {
+        "enabled": true,
+        "fallback_if_no_borrow": "Hard Exit / Stand-Down Only \u2014 Do NOT force unlocated or high-basis shorts",
+        "confirmed_trigger": "15m candle close + failed VWAP retest below 15m ORL (~$113.10)",
+        "hard_stop": "$117.16",
+        "target_zone": "$88.00 \u2013 $90.00 (cover well above $83\u2013$85 greenshoe wall!)",
+        "vix_adjusted_shares": 177
+      }
+    }
+  }
+}
